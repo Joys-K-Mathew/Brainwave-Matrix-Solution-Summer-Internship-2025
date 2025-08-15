@@ -1,4 +1,4 @@
-<center>Brainwave-Matrix-Solution-Summer-Internship-2025</center>
+<h1 align="center">Brainwave-Matrix-Solution-Summer-Internship-2025</h1>
 
 Welcome to the repository for my Summer 2025 internship at Brainwave Matrix Solution. This document serves as a comprehensive overview of my journey, the projects I contributed to, the skills I developed, and my key takeaways from this valuable experience.
 
