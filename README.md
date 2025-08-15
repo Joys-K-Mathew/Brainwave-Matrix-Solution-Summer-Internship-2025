@@ -67,6 +67,82 @@ This scanner acts as an automated detective 🕵️. It quickly analyzes a suspi
 - **Homograph Attacks**: Identifies international characters that look like standard letters to create visually deceptive domains.
 - **Suspicious Path & Redirects**: Scans the full URL path for phishing keywords (e.g., /billing/, /confirm/) and indicators of automatic redirects.
 - **DNS Records**: Confirms the domain points to a valid IP address.
+### Links that are used to test this tool
+#### Legitimate URLs (Should be safe)
+
+- `https://www.google.com`  
+  *Basic legitimate domain*
+
+- `https://login.microsoftonline.com`  
+  *Known legitimate login domain*
+
+- `https://www.amazon.com`  
+  *Established e-commerce site*
+
+#### Suspicious TLDs
+
+- `http://secure-login.tk`  
+  *Uses suspicious .tk TLD*
+
+- `http://banking-update.ml`  
+  *Uses suspicious .ml TLD*
+
+#### Brand Impersonation
+
+- `http://secure-paypal-login.com`  
+  *Brand impersonation + suspicious words*
+
+- `http://amazon-verification.xyz`  
+  *Brand impersonation + suspicious TLD*
+
+#### High Entropy (Random Domains)
+
+- `http://xj2h8k9l3p0q.com`  
+  *Random-looking domain name*
+
+- `http://a1b2c3d4e5f6g7h8.com`  
+  *High entropy domain*
+
+#### Structural Issues
+
+- `http://user:pass@example.com`  
+  *Credentials in URL*
+
+- `http://a.b.c.d.e.example.com`  
+  *Too many subdomains*
+
+- `http://this-is-a-very-long-domain-name-with-many-hyphens.com`  
+  *Excessive hyphens*
+
+#### Homograph & Typosquatting
+
+- `http://g00gle.com`  
+  *Common misspelling of Google*
+
+- `http://xn--google-9ua.com`  
+  *Homograph attack (Punycode representation)*
+
+#### Network & Path Issues
+
+- `http://192.168.1.1/login`  
+  *Uses IP address instead of domain*
+
+#### Additional Test Cases
+
+- `http://example.com/verify-account`  
+  *Suspicious path keywords*
+
+- `http://bit.ly/example`  
+  *URL shortener (potential redirect)*
+
+- `http://example.com:8080/secure`  
+  *Unusual port number*
+
+- `http://newlyregistereddomain.com`  
+  *Newly registered domain (if available)*
+
+
+
 
 ### Limitations of the Tool
 - **No External APIs**: To keep the tool simple and self-contained, it does not use external APIs like VirusTotal or Google Safe Browsing for checking against real-time blacklists.
